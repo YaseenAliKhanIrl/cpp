@@ -1,16 +1,23 @@
 from django.shortcuts import render, redirect
-from .forms import BookingForm
-from .models import GymSlot
+# from .forms import BookingForm
+from .models import Booking
 
-def book_slot(request):
+def bookslot(request):
     if request.method == 'POST':
-        form = BookingForm(request.POST)
-        if form.is_valid():
-            form.save()
-            return redirect('booking_success')
-    else:
-        form = BookingForm()
-    return render(request, 'index.html', {'form': form})
+        username = request.POST.get('name')
+        useremail = request.POST.get('email')
+        registrationdate = request.POST.get('date')
+        registrationtime = request.POST.get('time')
+        slotBook = Booking(
+            name=username,
+            email=useremail,
+            date=registrationdate,
+            time=registrationtime
+        )
+        slotBook.save()
+        return redirect('success')
+        
+    return render(request, 'index.html')
 
-def booking_success(request):
+def success(request):
     return render(request, 'success.html')

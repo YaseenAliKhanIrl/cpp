@@ -1,10 +1,16 @@
 from django.db import models
+from datetime import date
+from django.utils.timezone import datetime
 
 class GymSlot(models.Model):
     time = models.TimeField()
     available = models.BooleanField(default=True)
 
 class Booking(models.Model):
-    full_name = models.CharField(max_length=100)
+    name = models.CharField(max_length=100)
     email = models.EmailField()
-    slot = models.ForeignKey(GymSlot, on_delete=models.CASCADE)
+    date = models.DateField(default=date.today())  # Changed to DateField
+    time = models.TimeField(default=datetime.now())  # Changed to TimeField
+    
+    def __str__(self):
+        return f'{self.name}'

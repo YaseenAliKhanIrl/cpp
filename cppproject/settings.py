@@ -25,10 +25,10 @@ SECRET_KEY = 'django-insecure-icpc45my!jh8^1_s@3hf0g22%q*wh!mjcpth!69k@5*0t5td_q
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['4e9404a9916444ab9d1150e49f6e4120.vfs.cloud9.us-east-1.amazonaws.com']
+ALLOWED_HOSTS = ['4e9404a9916444ab9d1150e49f6e4120.vfs.cloud9.us-east-1.amazonaws.com',]
+CSRF_TRUSTED_ORIGINS = ["https://4e9404a9916444ab9d1150e49f6e4120.vfs.cloud9.us-east-1.amazonaws.com"]
 
 
-# Application definition
 
 INSTALLED_APPS = [
     'gymslotbooking.apps.GymslotbookingConfig',
@@ -41,6 +41,7 @@ INSTALLED_APPS = [
 ]
 
 MIDDLEWARE = [
+    'django.middleware.csrf.CsrfViewMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -75,10 +76,14 @@ WSGI_APPLICATION = 'cppproject.wsgi.application'
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-    }
+     'default': {
+         'ENGINE':'django.db.backends.postgresql_psycopg2',
+         'NAME':'gymdatabase2',
+         'USER':'postgres',
+         'PASSWORD':'yaseen123',
+         'HOST':'gymdatabase1.c1pntju44upd.us-east-1.rds.amazonaws.com',
+         'PORT':'5432'
+     }
 }
 
 
