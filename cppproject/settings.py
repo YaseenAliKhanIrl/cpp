@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-icpc45my!jh8^1_s@3hf0g22%q*wh!mjcpth!69k@5*0t5td_q
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['22236252cppprojectgymbookingenv.eba-awdqmvep.eu-west-1.elasticbeanstalk.com']
+ALLOWED_HOSTS = ['*']
 CSRF_TRUSTED_ORIGINS = ["https://5c577791bbc3453b8e5db40b79236586.vfs.cloud9.eu-west-1.amazonaws.com","https://22236252cppprojectgymbookingenv.eba-awdqmvep.eu-west-1.elasticbeanstalk.com"]
 
 
