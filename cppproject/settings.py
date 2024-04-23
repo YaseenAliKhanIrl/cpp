@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-icpc45my!jh8^1_s@3hf0g22%q*wh!mjcpth!69k@5*0t5td_q
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['4e9404a9916444ab9d1150e49f6e4120.vfs.cloud9.us-east-1.amazonaws.com']
 CSRF_TRUSTED_ORIGINS = ["https://4e9404a9916444ab9d1150e49f6e4120.vfs.cloud9.us-east-1.amazonaws.com"]
 
 
@@ -78,10 +78,10 @@ WSGI_APPLICATION = 'cppproject.wsgi.application'
 DATABASES = {
      'default': {
          'ENGINE':'django.db.backends.postgresql_psycopg2',
-         'NAME':'gymdatabase2',
+         'NAME':'yaseendatabase2',
          'USER':'postgres',
-         'PASSWORD':'yaseen123',
-         'HOST':'gymdatabase1.c1pntju44upd.us-east-1.rds.amazonaws.com ',
+         'PASSWORD':'postgres',
+         'HOST':'yaseendatabase2.c1pntju44upd.us-east-1.rds.amazonaws.com',
          'PORT':'5432'
      }
 }
